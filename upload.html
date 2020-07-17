@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method=post enctype=multipart/form-data>
+    <input type=file name=file value=hiring_data_with_predictions.xlsx> <br>
+    ------------------------------------------------------------ <br>
+    Actual Outcome <input type=text name=ao value=hired> (will be a dropdown of all columns in dataset) <br>
+    Positive Class <input type=text name=pc value=Yes> (will contain all the unique values of the above selected column) <br>
+    Predicted Probability of Positive Class <input type=text name=prob value=probability> (optional) (will be a dropdown of all columns in dataset) <br>
+    ------------------------------------------------------------ <br>
+    Predicted Outcome <input type=text name=po value=predicted> (will be a dropdown of all columns in dataset) <br>
+    ------------------------------------------------------------ <br>
+    Protected Feature <input type=text name=pf value=gender> (will be a dropdown of all columns in dataset) <br>
+    Baseline Group <input type=text name=bg value=Male> (will contain all the unique values of the above selected column) <br>
+    ------------------------------------------------------------ <br>
+    Acceptable Error % <input type=text name=error value=10> (will be numeric only between 0-100) <br>
+    ------------------------------------------------------------ <br>
+    <input type=submit value=Upload> 
+</form>
+    ------------------------------------------------------------ <br>
+Data dimensions: {{ shape }} <br>
+Acceptable Error %: {{ error }} <br>
+Classes: {{classes}} <br>
+TP: {{ tp }} <br>
+FP: {{ fp }} <br>
+FN: {{ fn }} <br>
+TN: {{ tn }} <br>
+TPR: {{ tpr }} <br>
+TNR: {{ tnr }} <br>
+FPR: {{ fpr }} <br>
+FNR: {{ fnr }} <br>
+PPV: {{ ppv }} <br>
+Average Probability of Positive class: {{ ppc }} <br>
+Average Probability of Negative class: {{ ppnc }} <br>
+Equal Opportunity: {{ eop }} <br>
+False positive error rate balance: {{ fperb }} <br>
+Equal Odds: {{ eod }} <br>
+Positive predictive parity: {{ ppp }} <br>
+Positive class balance: {{ pcb }} <br>
+Negative class balance: {{ ncb }} <br>
+Treatment equality: {{ te }} <br>
+
+</body>
+</html>
